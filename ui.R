@@ -2,7 +2,7 @@ shinyUI(fluidPage(
     
     theme = "lumen.css",
     
-    titlePanel("In-transit app for CAG hackathon (need a name for our product)"),
+    titlePanel("Changi Recommends (do we have another name for our product?)"),
     
     sidebarLayout(
         sidebarPanel(
@@ -18,11 +18,17 @@ shinyUI(fluidPage(
             
             # ==== 2. Select which broad category ==== #
             tags$h5("Select a category:"),
-            actionButton("_r&r", "Rest & Relax", icon = icon("pause", lib = "font-awesome")),
-            actionButton("_f&b", "Food & Beverages", icon = icon("cutlery", lib = "font-awesome")),
-            actionButton("_shopping", "Shopping", icon = icon("shopping-cart", lib = "font-awesome"))
+            actionButton("_r&r", "Rest & Relax", icon = icon("pause", class = "fa-spin", lib = "font-awesome")),
+            actionButton("_f&b", "Food & Beverages", icon = icon("cutlery", class = "fa-spin", lib = "font-awesome")),
+            actionButton("_shopping", "Shopping", icon = icon("shopping-cart", class = "fa-spin", lib = "font-awesome")),
+            tags$h5("You have selected:"),
+            verbatimTextOutput("showWhichCate")
             
         , width = 4),
-        mainPanel()
+        
+        mainPanel(
+            # ==== 3. Display Markov recommendations ==== #
+            imageOutput("showMarkov")
+        )
     )
 ))

@@ -19,7 +19,7 @@ shinyServer(function(input,output){
     output$showFlightNum <- renderText({input$"_flightNum"})
     
     # ==== 2. Select which broad category ==== #
-    params <- reactiveValues(whichCate = NULL)
+    params <- reactiveValues(whichCate = NULL, submitted = FALSE)
     
     observeEvent(input$"_r&r",{
         params$whichCate <- "Rest & Relax"
@@ -35,9 +35,16 @@ shinyServer(function(input,output){
     
     output$showWhichCate <- renderText({params$whichCate})
     
+    observeEvent(input$"_submit",{
+        params$submitted <- TRUE
+    })
+    
     # ==== 3. Display Markov recommendations ==== #
     output$showMarkov <- renderImage({
-        if(length(params$whichCate) == 0)
+        if(params$submitted == FALSE)
+            list(src = "images/example_logo.png", alt = NULL, width = 600)
+        
+        else if(length(params$whichCate) == 0)
             list(src = "images/example_logo.png", alt = NULL, width = 600)
         
         else if(params$whichCate == "Rest & Relax")

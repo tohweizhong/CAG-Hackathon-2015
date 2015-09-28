@@ -2,7 +2,8 @@ shinyUI(fluidPage(
     
     theme = "lumen.css",
     
-    titlePanel("Changi Recommends (do we have another name for our product?)"),
+    titlePanel(tags$strong("Changi Recommends (do we have another name?)"),
+               tags$head(tags$title("Changi Recommends"))),
     
     sidebarLayout(
         sidebarPanel(
@@ -22,7 +23,11 @@ shinyUI(fluidPage(
             actionButton("_f&b", "Food & Beverages", icon = icon("cutlery", class = "fa-spin", lib = "font-awesome")),
             actionButton("_shopping", "Shopping", icon = icon("shopping-cart", class = "fa-spin", lib = "font-awesome")),
             tags$h5("You have selected:"),
-            verbatimTextOutput("showWhichCate")
+            verbatimTextOutput("showWhichCate"),
+            tags$hr(),
+            actionButton("_submit", "What does Changi recommend?", icon = icon("plane", lib = "font-awesome")),
+            tags$br(),
+            tags$h6("© XGB-Protocol for CAG Hackathon 2015")
             
         , width = 4),
         

@@ -1,4 +1,4 @@
-shinyServer(function(input,output){
+shinyServer(function(session, input, output){
     
     # ==== 1. capture demographics and flight number ==== #
     output$selectNatl <- renderUI({
@@ -19,7 +19,7 @@ shinyServer(function(input,output){
     output$showFlightNum <- renderText({input$"_flightNum"})
     
     # ==== 2. Select which broad category ==== #
-    params <- reactiveValues(whichCate = NULL, submitted = FALSE)
+    params <- reactiveValues(whichCate = " ", submitted = FALSE)
     
     observeEvent(input$"_r&r",{
         params$whichCate <- "Rest & Relax"
@@ -42,12 +42,39 @@ shinyServer(function(input,output){
     # ==== 3. Display Markov recommendations ==== #
     output$showMarkov <- renderImage({
         if(params$submitted == FALSE)
-            list(src = "images/example_logo.png", alt = NULL, width = 600)
+            list(src = "images/logo2.png", alt = NULL, width = 600)
         
-        else if(length(params$whichCate) == 0)
-            list(src = "images/example_logo.png", alt = NULL, width = 600)
+        else if(params$whichCate == "None")
+            list(src = "images/logo2.png", alt = NULL, width = 600)
         
         else if(params$whichCate == "Rest & Relax")
             list(src = "images/example_markov.png", alt = NULL, width = 800)
     }, deleteFile = F)
+    
+    
+    observe({
+        .choices <- NULL
+        
+        if(params$whichCate == " ")
+            .choices <- ""
+        if(params$whichCate == "Rest & Relax")
+            .choices <- c("Enchanted Garden", "Nap lounge", "Movie Theatre")
+        else if(params$whichCate == "Food & Beverages")
+            .choices <- c("McDonalds", "Swensens", "Ding Tai Fung")
+        else if(params$whichCate == "Shopping")
+            .choices <- c("Zara", "Braun Buffel", "Charles & Keith")
+        
+        .choices <- as.pairlist(.choices)
+        
+        updateSelectInput(session, "_root", choices = .choices)
+    })
+    
+    output$showInfo <- renderDataTable({
+        if(params$submitted == TRUE){
+            df <- data.frame(matrix(99, nrow = 2, ncol = 2))
+            colnames(df) <- c("Facility", "Location")
+            return(df)
+        }
+    }, options = list(searching = F, paging = F))
+    
 })

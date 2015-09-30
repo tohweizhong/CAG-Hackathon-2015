@@ -1,39 +1,53 @@
 shinyUI(fluidPage(
     
-    theme = "lumen.css",
+    theme = "simplex.css",
     
-    titlePanel(tags$strong("Changi Recommends (do we have another name?)"),
-               tags$head(tags$title("Changi Recommends"))),
+    titlePanel(tags$head(tags$title("Genie"))),
     
-    sidebarLayout(
-        sidebarPanel(
-            # ==== 1. capture demographics and flight number ==== #
-            uiOutput("selectNatl"),
-            uiOutput("selectAge"),
-            uiOutput("selectGender"),
-            textInput("_flightNum", label = "Enter your flight number"),
-            tags$h5("You have entered:"),
-            verbatimTextOutput("showFlightNum"),
-            
-            tags$hr(),
-            
-            # ==== 2. Select which broad category ==== #
-            tags$h5("Select a category:"),
-            actionButton("_r&r", "Rest & Relax", icon = icon("pause", class = "fa-spin", lib = "font-awesome")),
-            actionButton("_f&b", "Food & Beverages", icon = icon("cutlery", class = "fa-spin", lib = "font-awesome")),
-            actionButton("_shopping", "Shopping", icon = icon("shopping-cart", class = "fa-spin", lib = "font-awesome")),
-            tags$h5("You have selected:"),
-            verbatimTextOutput("showWhichCate"),
-            tags$hr(),
-            actionButton("_submit", "What does Changi recommend?", icon = icon("plane", lib = "font-awesome")),
-            tags$br(),
-            tags$h6("© XGB-Protocol for CAG Hackathon 2015")
-            
-        , width = 4),
+    fluidRow(
         
-        mainPanel(
-            # ==== 3. Display Markov recommendations ==== #
-            imageOutput("showMarkov")
+        # ==== 1. capture demographics ==== #
+        column(2,
+               tags$br(),
+               uiOutput("selectNatl"),
+               uiOutput("selectAge"),
+               uiOutput("selectGender")
+        ),
+        
+        # ==== 2. capture flight number ==== #
+        column(2,
+               tags$br(),
+               textInput("_flightNum", label = "Enter your flight number:", value = " "),
+               tags$h5("You have entered:"),
+               verbatimTextOutput("showFlightNum")
+        ),
+        
+        # ==== 3. Select which broad category ==== #
+        column(4,
+               tags$h5("What would you like to do first?"),
+               actionButton("_r&r", "Rest & Relax", icon = icon("pause", class = "fa-spin", lib = "font-awesome")),
+               actionButton("_f&b", "Food & Beverages", icon = icon("cutlery", class = "fa-spin", lib = "font-awesome")),
+               actionButton("_shopping", "Shopping", icon = icon("shopping-cart", class = "fa-spin", lib = "font-awesome")),
+               tags$h5("You have selected:"),
+               verbatimTextOutput("showWhichCate")
+        ),
+        
+        # ==== 4. Select root node ==== #
+        column(3,
+               tags$br(),
+               selectInput("_root", "Where would you like to go first?", choices = c('a1'='1','b2'='2')),
+               actionButton("_submit", "What does Genie recommend?", icon = icon("plane", lib = "font-awesome")),
+               tags$br(),
+               tags$h6("© XGB-Protocol for CAG Hackathon 2015")
         )
+    ),
+    
+    # ==== 5. Display Markov recommendations ==== #
+    
+    fluidRow(
+        
+        column(8, imageOutput("showMarkov")),
+        column(3, dataTableOutput("showInfo"))
     )
+    
 ))

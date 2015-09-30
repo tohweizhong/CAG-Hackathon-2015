@@ -2,7 +2,10 @@ shinyUI(fluidPage(
     
     theme = "simplex.css",
     
-    titlePanel(tags$head(tags$title("Genie"))),
+    titlePanel(tags$h2(tags$strong("Genie - A Recommendation App for Travellers In-Transit")),
+               tags$head(tags$title("Genie"))),
+    
+    tags$hr(),
     
     fluidRow(
         
@@ -42,12 +45,13 @@ shinyUI(fluidPage(
         )
     ),
     
-    # ==== 5. Display Markov recommendations ==== #
-    
+    # ==== 5. Display Markov recommendations and required information ==== #
     fluidRow(
         
         column(8, imageOutput("showMarkov")),
-        column(3, dataTableOutput("showInfo"))
+        column(3, dataTableOutput("showInfo"),
+               tags$br(),
+               textOutput("showLegend"))
     )
     
 ))

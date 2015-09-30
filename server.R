@@ -3,13 +3,14 @@ shinyServer(function(session, input, output){
     # ==== 1. capture demographics and flight number ==== #
     output$selectNatl <- renderUI({
         selectizeInput("_natl", "Select your nationality:",
-                       c("Singapore" = "SG"))
+                       c("Singapore" = "SG",
+                         "Indonesia" = "IN",
+                         "China" = "CN"))
     })
     
     output$selectAge <- renderUI({
         selectizeInput("_age", "Select your age group:",
-                       c("10 - 20", "20 - 30", "30 - 40",
-                         "40 - 50", "50 - 60", "60 - 70","70 - 80"))
+                       c("Below 35", "35 - 64", "Above 65"))
     })
     
     output$selectGender <- renderUI({
@@ -39,19 +40,7 @@ shinyServer(function(session, input, output){
         params$submitted <- TRUE
     })
     
-    # ==== 3. Display Markov recommendations ==== #
-    output$showMarkov <- renderImage({
-        if(params$submitted == FALSE)
-            list(src = "images/logo2.png", alt = NULL, width = 600)
-        
-        else if(params$whichCate == "None")
-            list(src = "images/logo2.png", alt = NULL, width = 600)
-        
-        else if(params$whichCate == "Rest & Relax")
-            list(src = "images/example_markov.png", alt = NULL, width = 800)
-    }, deleteFile = F)
-    
-    
+    # === 3. Select root node ==== # 
     observe({
         .choices <- NULL
         
@@ -62,12 +51,32 @@ shinyServer(function(session, input, output){
         else if(params$whichCate == "Food & Beverages")
             .choices <- c("McDonalds", "Swensens", "Ding Tai Fung")
         else if(params$whichCate == "Shopping")
-            .choices <- c("Zara", "Braun Buffel", "Charles & Keith")
+            .choices <- c("Guardian", "Longchamp", "Zara", "Braun Buffel", "Charles & Keith")
         
         .choices <- as.pairlist(.choices)
         
         updateSelectInput(session, "_root", choices = .choices)
+        
+        params$submitted <- FALSE
     })
+    
+    # ==== 4. Display Markov recommendations and other information ==== #
+    output$showMarkov <- renderImage({
+        if(params$submitted == FALSE)
+            list(src = "images/logo2.png", alt = NULL, width = 600)
+        
+        else if(params$whichCate == "None")
+            list(src = "images/logo2.png", alt = NULL, width = 600)
+        
+        else if(params$whichCate == "Rest & Relax")
+            list(src = "images/example_markov.png", alt = NULL, width = 800)
+        
+        else if(params$whichCate == "Shopping" && input$"_root" == "Guardian")
+            list(src = "images/example_guardian.png", alt = NULL, width = 800)
+        
+        else if(params$whichCate == "Shopping" && input$"_root" == "Longchamp")
+            list(src = "images/example_longchamp.png", alt = NULL, width = 800)
+    }, deleteFile = F)
     
     output$showInfo <- renderDataTable({
         if(params$submitted == TRUE){
@@ -75,6 +84,17 @@ shinyServer(function(session, input, output){
             colnames(df) <- c("Facility", "Location")
             return(df)
         }
-    }, options = list(searching = F, paging = F))
+    }, options = list(searching = FALSE, paging = FALSE))
     
+    output$showLegend <- renderText({
+        if(params$submitted == TRUE){
+            
+            legend <- "The colour of the circles represent the category of the 
+                      facility - blue for Rest & Relax, orange for Food & Beverages, 
+                      green for shopping. Size of circle represent popularity of facility, 
+                      and thickness of arrow represent the likelihood of visiting 
+                      a given facility when originating from another facility."
+            return(legend)
+        }
+    })
 })

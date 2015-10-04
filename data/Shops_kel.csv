@@ -1,0 +1,90 @@
+ShopName,Location,Category,AvgTime,posX,posY,Colour
+Ambassador Transit Lounge,T2,R&R,1.43,77,81,green
+Avenue Kids,T2,Shopping,0.45,35,33,orange
+Bee Cheng Hiang,T1,Shopping,0.52,31,41,blue
+Bengawan Solo,T1,F&B,0.63,26,32,blue
+Bonia Natural,T3,Shopping,0.39,74,21,orange
+Bottega Venetta,T3,Shopping,0.29,25,30,orange
+Burberry,T3,Shopping,0.36,29,21,orange
+Butterfly Gardens,T3,R&R,0.43,76,90,green
+Cactus Garden,T1,R&R,0.39,24,95,green
+Cameras Electronics,T2,Shopping,0.47,74,35,orange
+DFS Duty Free,T1,Shopping,0.71,5,45,orange
+DFS Duty Free ,T2,Shopping,0.66,12,38,orange
+DFS Duty Free  ,T3,Shopping,0.72,56,40,orange
+Discover Singapore,T1,Shopping,2.5,92,30,orange
+Discover Singapore ,T2,Shopping,2.5,69,30,orange
+Dnata Lounge,T3,R&R,1.21,46,89,green
+Entertainment Deck,T2,R&R,1.54,89,82,green
+Fashion Avenue,T3,Shopping,0.64,58,22,orange
+Food Gallery,T1,F&B,0.68,53,85,blue
+Giordano,T1,Shopping,0.22,18,35,orange
+Guardian ,T2,Shopping,0.33,26,39,orange
+Guardian  ,T1,Shopping,0.28,88,50,orange
+Gucci,T2,Shopping,0.36,48,19,orange
+Gucci ,T3,Shopping,0.4,27,21,orange
+Hard Rock Cafe,T3,F&B,0.87,62,45,blue
+Harry's Wine Bar,T3,F&B,0.42,73,43,blue
+Hermes,T2,Shopping,0.43,82,19,orange
+Hermes ,T3,Shopping,0.31,25,30,orange
+Hong Kong Sheng Kee Dessert,T2,F&B,0.39,46,48,blue
+Hong Kong Sheng Kee Dessert ,T3,F&B,0.39,33,44,blue
+Hugo Boss,T3,Shopping,0.36,32,23,orange
+I-Connect,T2,R&R,0.76,50,81,green
+Ippudo Express,T3,F&B,0.57,33,41,blue
+iStudio,T2,Shopping,0.25,32,19,orange
+iStudio ,T3,Shopping,0.25,73,23,orange
+Kaboom,T3,Shopping,0.21,78,20,orange
+Kaveri Vegetarian Cuisine,T2,F&B,0.79,50,70,blue
+Kids World,T1,Shopping,0.41,42,48,orange
+Killney Kopitiam,T1,F&B,0.74,17,40,blue
+Killney Kopitiam ,T3,F&B,0.37,35,40,blue
+Kipling,T1,Shopping,0.23,22,35,orange
+Lacoste,T2,Shopping,0.26,38,42,orange
+LongChamp,T2,Shopping,0.24,75,29,orange
+Madame Butterfly,T2,Shopping,0.33,66,43,orange
+Miu Miu,T2,Shopping,0.47,77,19,orange
+Montblanc,T1,Shopping,0.25,42,24,orange
+Montblanc ,T3,Shopping,0.32,33,25,orange
+Movie Theatre,T3,R&R,1.3,80,82,green
+Orchid Cafe,T2,F&B,0.63,85,80,blue
+Pacific Coffee Company,T1,F&B,1.13,75,45,blue
+Paul&Shark,T1,Shopping,0.15,24,35,orange
+Plaza Premium Lounge,T1,R&R,1.34,16,75,green
+Prada,T2,Shopping,0.34,46,19,orange
+Prada ,T3,Shopping,0.37,25,20,orange
+Quantas Singapore Lounge,T1,R&R,1.87,45,70,green
+Relay,T1,Shopping,0.12,35,42,orange
+Rolex,T3,Shopping,0.15,25,25,orange
+Sakae Sushi,T2,F&B,0.94,46,49,blue
+Samsung,T3,Shopping,0.28,37,28,orange
+SATS Premier Lounge,T1,R&R,1.77,35,70,green
+Shilla Cosmetics,T1,Shopping,0.43,6,48,orange
+Shilla Cosmetics ,T2,Shopping,0.49,16,38,orange
+Shilla Cosmetics  ,T3,Shopping,0.55,44,40,orange
+SIA KrisFlyer Gold Lounge,T3,R&R,1.32,30,90,green
+SIA SilverKris Lounge,T3,R&R,1.3,18,80,green
+Singapore Food Street,T3,F&B,0.68,65,85,blue
+Sky View Lounge,T1,R&R,1.43,75,82,green
+Sony Store,T3,Shopping,0.27,75,31,orange
+Spageddies,T3,F&B,0.77,61,83,blue
+Sunflower Garden,T2,R&R,0.43,86,87,green
+Sunglass Hut,T1,Shopping,0.58,19,35,orange
+Sunglass Hut ,T2,Shopping,0.13,76,41,orange
+Sunglass Hut  ,T3,Shopping,0.37,35,20,orange
+Sushi Burrito,T1,F&B,0.89,20,40,blue
+Swarovski,T2,Shopping,0.14,34,19,orange
+Swimming Pool,T1,R&R,1.52,84,90,green
+Tai Hing,T2,F&B,0.57,50,42,blue
+The Chocolatier,T2,Shopping,0.34,67,20,orange
+The Coffee Bean & Tea Leaf,T1,F&B,1.08,46,48,blue
+The Connoisseur Concerto,T2,F&B,0.75,30,40,blue
+The Enchanted Garden,T2,R&R,0.38,29,39,green
+The Fashion Gallery,T2,Shopping,0.77,42,35,orange
+The Green Market Express,T1,F&B,1.24,76,46,blue
+Times Travel,T2,Shopping,0.17,87,20,orange
+TWG Tea Boutique,T3,Shopping,0.18,41,24,orange
+Wang Cafe,T1,F&B,0.72,76,43,blue
+Watsons,T3,Shopping,0.28,15,1,orange
+Wellness Spa,T2,R&R,1.09,40,83,green
+ZARA,T3,Shopping,0.27,15,20,orange

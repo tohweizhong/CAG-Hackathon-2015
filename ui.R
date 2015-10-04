@@ -20,7 +20,7 @@ shinyUI(fluidPage(
         # ==== 2. capture flight number ==== #
         column(2,
                tags$br(),
-               textInput("_flightNum", label = "Enter your flight number:", value = " "),
+               textInput("_flightNum", label = "Enter your flight number:", value = ""),
                tags$h5("You have entered:"),
                verbatimTextOutput("showFlightNum")
         ),
@@ -38,7 +38,7 @@ shinyUI(fluidPage(
         # ==== 4. Select root node ==== #
         column(3,
                tags$br(),
-               selectInput("_root", "Where would you like to go first?", choices = c('a1'='1','b2'='2')),
+               selectInput("_root", "Where would you like to go first?", choices = ""),
                actionButton("_submit", "What does Genie recommend?", icon = icon("plane", lib = "font-awesome")),
                tags$br(),
                tags$h6("© XGB-Protocol for CAG Hackathon 2015")
@@ -47,11 +47,14 @@ shinyUI(fluidPage(
     
     # ==== 5. Display Markov recommendations and required information ==== #
     fluidRow(
-        
-        column(8, imageOutput("showMarkov")),
-        column(3, dataTableOutput("showInfo"),
+        column(8, plotOutput("showMarkov")),
+        column(3, textOutput("showTime"),
                tags$br(),
-               textOutput("showLegend"))
+               tags$br(),
+               textOutput("showLegend1"),
+               tags$br(),
+               textOutput("showLegend2"),
+               tags$br(),
+               textOutput("showLegend3"))
     )
-    
 ))

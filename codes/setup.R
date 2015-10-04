@@ -10,3 +10,11 @@ devtools::install_github('rstudio/rsconnect')
 library(rsconnect)
 
 deployApp()
+
+# =====
+
+library(rsconnect)
+library(packrat)
+library(shinyapps)
+
+deployApp()

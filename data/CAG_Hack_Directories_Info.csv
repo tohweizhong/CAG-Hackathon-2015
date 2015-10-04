@@ -1,0 +1,90 @@
+ShopName,Location,Category,AvgTime,posX,posY
+DFS Duty Free,T1,Shopping,0.71,5,45
+Shilla Cosmetics,T1,Shopping,0.43,6,48
+Giordano,T1,Shopping,0.22,18,35
+Sunglass Hut,T1,Shopping,0.58,19,35
+Kipling,T1,Shopping,0.23,22,35
+Paul&Shark,T1,Shopping,0.15,24,35
+Bengawan Solo,T1,F&B,0.63,26,32
+Bee Cheng Hiang,T1,F&B,0.52,31,41
+Relay,T1,Shopping,0.12,35,42
+Sushi Burrito,T1,F&B,0.89,20,40
+Killney Kopitiam,T1,F&B,0.74,17,40
+The Coffee Bean & Tea Leaf,T1,F&B,1.08,46,48
+Kids World,T1,Shopping,0.41,42,48
+Montblanc,T1,Shopping,0.25,42,24
+Pacific Coffee Company,T1,F&B,1.13,75,45
+The Green Market Express,T1,F&B,1.24,76,46
+Wang Cafe,T1,F&B,0.72,76,43
+Discover Singapore,T1,Shopping,2.5,92,30
+Guardian,T1,Shopping,0.28,88,50
+Food Gallery,T1,F&B,0.68,53,85
+Cactus Garden,T1,R&R,0.39,24,95
+Sky View Lounge,T1,R&R,1.43,75,82
+Swimming Pool,T1,R&R,1.52,84,90
+Quantas Singapore Lounge,T1,R&R,1.87,45,70
+Plaza Premium Lounge,T1,R&R,1.34,16,75
+SATS Premier Lounge,T1,R&R,1.77,35,70
+DFS Duty Free,T2,Shopping,0.66,12,38
+Shilla Cosmetics,T2,Shopping,0.49,16,38
+Guardian,T2,Shopping,0.33,26,39
+Lacoste,T2,Shopping,0.26,38,42
+Miu Miu,T2,Shopping,0.47,77,19
+Times Travel,T2,Shopping,0.17,87,20
+The Connoisseur Concerto,T2,F&B,0.75,30,40
+The Enchanted Garden,T2,R&R,0.38,29,39
+Sakae Sushi,T2,F&B,0.94,46,49
+Hong Kong Sheng Kee Dessert,T2,F&B,0.39,46,48
+Kaveri Vegetarian Cuisine,T2,F&B,0.79,50,70
+Discover Singapore,T2,Shopping,2.5,69,30
+LongChamp,T2,Shopping,0.24,75,29
+Tai Hing,T2,F&B,0.57,50,42
+Ambassador Transit Lounge,T2,R&R,1.43,77,81
+Entertainment Deck,T2,R&R,1.54,89,82
+Sunflower Garden,T2,R&R,0.43,86,87
+I-Connect,T2,R&R,0.76,50,81
+Sunglass Hut,T2,Shopping,0.13,76,41
+Madame Butterfly,T2,Shopping,0.33,66,43
+Avenue Kids,T2,Shopping,0.45,35,33
+Wellness Spa,T2,R&R,1.09,40,83
+The Fashion Gallery,T2,Shopping,0.77,42,35
+Orchid Cafe,T2,F&B,0.63,85,80
+Cameras Electronics,T2,Shopping,0.47,74,35
+iStudio,T2,Shopping,0.25,32,19
+Swarovski,T2,Shopping,0.14,34,19
+Prada,T2,Shopping,0.34,46,19
+Hermes,T2,Shopping,0.43,82,19
+Gucci,T2,Shopping,0.36,48,19
+The Chocolatier,T2,Shopping,0.34,67,20
+DFS Duty Free,T3,Shopping,0.72,56,40
+Shilla Cosmetics,T3,Shopping,0.55,44,40
+Watsons,T3,Shopping,0.28,15,1
+Bonia Natural,T3,Shopping,0.39,74,21
+Bottega Venetta,T3,Shopping,0.29,25,30
+Burberry,T3,Shopping,0.36,29,21
+Fashion Avenue,T3,Shopping,0.64,58,22
+Gucci,T3,Shopping,0.4,27,21
+Hermes,T3,Shopping,0.31,25,30
+Hugo Boss,T3,Shopping,0.36,32,23
+Montblanc,T3,Shopping,0.32,33,25
+Prada,T3,Shopping,0.37,25,20
+Sunglass Hut,T3,Shopping,0.37,35,20
+ZARA,T3,Shopping,0.27,15,20
+Rolex,T3,Shopping,0.15,25,25
+Samsung,T3,Shopping,0.28,37,28
+Sony Store,T3,Shopping,0.27,75,31
+iStudio,T3,Shopping,0.25,73,23
+TWG Tea Boutique,T3,Shopping,0.18,41,24
+Kaboom,T3,Shopping,0.21,78,20
+Harry's Wine Bar,T3,F&B,0.42,73,43
+Hong Kong Sheng Kee Dessert,T3,F&B,0.39,33,44
+Ippudo Express,T3,F&B,0.57,33,41
+Killney Kopitiam,T3,F&B,0.37,35,40
+Hard Rock Cafe,T3,F&B,0.87,62,45
+Singapore Food Street,T3,F&B,0.68,65,85
+Spageddies,T3,F&B,0.77,61,83
+SIA KrisFlyer Gold Lounge,T3,R&R,1.32,30,90
+Dnata Lounge,T3,R&R,1.21,46,89
+Butterfly Gardens,T3,R&R,0.43,76,90
+Movie Theatre,T3,R&R,1.3,80,82
+SIA SilverKris Lounge,T3,R&R,1.3,18,80

@@ -273,7 +273,7 @@ shinyServer(function(session, input, output){
     
     output$showLegend2 <- renderText({
         if(params$submitted == TRUE){
-            legend <- "Orange: Food & Beverages"
+            legend <- "Turquoise: Food & Beverages"
             return(legend)
         }
         
@@ -281,23 +281,21 @@ shinyServer(function(session, input, output){
     
     output$showLegend3 <- renderText({
         if(params$submitted == TRUE){
-            legend <- "Turquoise: Shopping"
+            legend <- "Orange: Shopping"
             return(legend)
         }
     })
     
     output$showLegend4 <- renderText({
         if(params$submitted == TRUE){
-            legend <- "Size of shape: overall popularity of shop"
+            legend <- "Size of shape: average time spent at shop"
             return(legend)
         }
     })
     
     output$showLegend5 <- renderText({
         if(params$submitted == TRUE){
-            legend <- "Thickness of arrow: popularity of 
-                      visiting a given shop when originating 
-                      from another shop"
+            legend <- "Thickness of arrow: popularity of shop"
             return(legend)
         }
     })

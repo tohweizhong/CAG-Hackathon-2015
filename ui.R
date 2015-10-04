@@ -2,13 +2,13 @@ shinyUI(fluidPage(
     
     theme = "simplex.css",
     
-    titlePanel(tags$h2(tags$strong("Genie - A Recommendation App for Travellers In-Transit")),
+    titlePanel(tags$h2(tags$strong("Genie: Towards Smart & Personalized Recommendations for Travellers In-Transit")),
                tags$head(tags$title("Genie"))),
     
     tags$hr(),
     
     fluidRow(
-        
+     
         # ==== 1. capture demographics ==== #
         column(2,
                tags$br(),
@@ -21,8 +21,9 @@ shinyUI(fluidPage(
         column(2,
                tags$br(),
                textInput("_flightNum", label = "Enter your flight number:", value = ""),
-               tags$h5("You have entered:"),
-               verbatimTextOutput("showFlightNum")
+               tags$h5("Time to flight:"),
+               #verbatimTextOutput("showFlightNum"),
+               verbatimTextOutput("showTime")
         ),
         
         # ==== 3. Select which broad category ==== #
@@ -48,13 +49,34 @@ shinyUI(fluidPage(
     # ==== 5. Display Markov recommendations and required information ==== #
     fluidRow(
         column(8, plotOutput("showMarkov")),
-        column(3, textOutput("showTime"),
-               tags$br(),
+        column(3,
+               textOutput("showLegend0"),
+               tags$head(tags$style(" #showLegend0{font-size: 24px;
+                                    font-style: bold;}")),
                tags$br(),
                textOutput("showLegend1"),
-               tags$br(),
+               tags$head(tags$style("#showLegend1{color: #A16CC1;
+                                 font-size: 16px;
+                                 font-style: bold;
+                                 }")),
                textOutput("showLegend2"),
+               tags$head(tags$style("#showLegend2{color: #F0E68C;
+                                 font-size: 16px;
+                                    font-style: bold;
+                                    }")),
+               textOutput("showLegend3"),
+               tags$head(tags$style("#showLegend3{color: #7FFFD4;
+                                 font-size: 16px;
+                                 font-style: bold;
+                                 }")),
                tags$br(),
-               textOutput("showLegend3"))
+               textOutput("showLegend4"),
+               tags$head(tags$style(" #showLegend4{font-size: 16px;
+                                    font-style: bold;}")),
+               tags$br(),
+               textOutput("showLegend5"),
+               tags$head(tags$style(" #showLegend5{font-size: 16px;
+                                    font-style: bold;}"))
+        )
     )
 ))

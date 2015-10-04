@@ -33,17 +33,20 @@ shinyServer(function(session, input, output){
         profile <- gsub(x = profile, pattern = "<", replacement = "less")
         profile <- gsub(x = profile, pattern = ">", replacement = "more")
         
-        if(input$"_flightNum" != ""){
-            
-            # extract terminal
-            flightNum <- input$"_flightNum"
-            idx <- which(flights.df$Flight.No == flightNum)
-            terminal <- flights.df$Terminal[idx]
-            filename <- paste("images/network images/NEW network images/", terminal, " images/", root, "_", profile, ".png", sep = "")
-        }
-        else{
-            filename <- paste("images/network images/", root, "_", profile, ".png", sep = "") 
-        }
+#         if(input$"_flightNum" != ""){
+#             
+#             # extract terminal
+#             flightNum <- input$"_flightNum"
+#             idx <- which(flights.df$Flight.No == flightNum)
+#             terminal <- flights.df$Terminal[idx]
+#             filename <- paste("images/network images/NEW network images/", terminal, " images/", root, "_", profile, ".png", sep = "")
+#         }
+#         else{
+#             filename <- paste("images/network images/", root, "_", profile, ".png", sep = "") 
+#         }
+#         print(filename)
+        
+        filename <- paste("images/network images/", root, "_", profile, ".png", sep = "")
         print(filename)
         return(filename)
     })
@@ -148,6 +151,7 @@ shinyServer(function(session, input, output){
         idx2 <- which(.choices.cate == cate)
         .choices <- .choices[idx2]
         print(.choices)
+        
         # extract facilities from the correct terminal
 #         if(input$"_flightNum" != ""){
 #             
@@ -188,10 +192,10 @@ shinyServer(function(session, input, output){
     output$showMarkov <- renderImage({
         
         if(params$submitted == FALSE)
-            list(src = "images/logo2.png", alt = NULL, width = 600)
+            list(src = "images/logo3.png", alt = NULL, width = 600)
         
         else if(params$whichCate == "None")
-            list(src = "images/logo2.png", alt = NULL, width = 600)
+            list(src = "images/logo3.png", alt = NULL, width = 600)
         
         ###
         
@@ -228,9 +232,10 @@ shinyServer(function(session, input, output){
 #     }, options = list(searching = FALSE, paging = FALSE))
     
     output$showTime <- renderText({
-        if(params$submitted == TRUE){
-            
-            flightNum <- input$"_flightNum"
+        
+        flightNum <- input$"_flightNum"
+        
+        if(flightNum != ""){
             idx <- which(flights.df$Flight.No == flightNum)
             flightTime <- flights.df$Time[idx]
             
@@ -245,32 +250,54 @@ shinyServer(function(session, input, output){
             mins <- round((timeDiff %% 1) * 60)
             hrs <- timeDiff - timeDiff %% 1
             
-            returnMe <- paste("Time to flight: ", hrs, "hrs and ", mins, " mins.", sep = "")
+            #returnMe <- paste("Time to flight: ", hrs, "hrs and ", mins, " mins.", sep = "")
+            returnMe <- paste(hrs, " hrs and ", mins, " mins", sep = "")
             return(returnMe) 
         }
+        return("")
            
+    })
+    
+    output$showLegend0 <- renderText({
+        if(params$submitted == TRUE){
+            return("Legend:")
+        }
     })
     
     output$showLegend1 <- renderText({
         if(params$submitted == TRUE){
-            legend <- "Colour of the circles represent the category of the 
-                      facility - blue for Rest & Relax, orange for Food & Beverages, 
-                      green for shopping."
+            legend <- "Purple: Rest & Relax"
             return(legend)
         }
     })
     
     output$showLegend2 <- renderText({
         if(params$submitted == TRUE){
-            legend <- "Size of circle represent popularity of facility."
+            legend <- "Orange: Food & Beverages"
             return(legend)
         }
+        
     })
     
     output$showLegend3 <- renderText({
         if(params$submitted == TRUE){
-            legend <- "Thickness of arrow represent the likelihood of 
-                      visiting a given facility when originating from another facility."
+            legend <- "Turquoise: Shopping"
+            return(legend)
+        }
+    })
+    
+    output$showLegend4 <- renderText({
+        if(params$submitted == TRUE){
+            legend <- "Size of shape: overall popularity of shop"
+            return(legend)
+        }
+    })
+    
+    output$showLegend5 <- renderText({
+        if(params$submitted == TRUE){
+            legend <- "Thickness of arrow: popularity of 
+                      visiting a given shop when originating 
+                      from another shop"
             return(legend)
         }
     })
